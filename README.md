@@ -1,12 +1,22 @@
 # Credit Card Fraud Detection
 
-### Project Proposal
+Introduction Goes Here
 
-We are going to work with the [Credit Card Fraud Detection dataset](https://www.kaggle.com/mlg-ulb/creditcardfraud) from Kaggle.  This dataset contains 284,807 credit card transactions made in September 2013 by credit cardholders.  Of the 284,807 transactions, 492 (0.172%) are fraudulent.  The dataset consists of 31 columns of numerical data.  Three of the columns are time (number of seconds between the first transaction in the dataset and the current transaction), amount of transaction, and class (1 = fraudulent; 0 = not fraudulent).  The remaining columns are designated as V1, V2, etc.  The variables in these columns were obtained using Principal Component Analysis (PCA) to transform data about each transaction.  We do not know what the original data features are because that information is confidential.  
+### The Credit Card Fraud Dataset
 
-The questions will be asking of our data are:
+The [Credit Card Fraud Detection dataset](https://www.kaggle.com/mlg-ulb/creditcardfraud) from Kaggle contains 284,807 credit card transactions made in September 2013 by credit cardholders.  Of the 284,807 transactions, 492 (0.172%) are fraudulent.  The dataset consists of 31 columns of numerical data.  Three of the columns are time (number of seconds between the first transaction in the dataset and the current transaction), amount of transaction, and class (1 = fraudulent; 0 = not fraudulent).  The remaining columns are designated as V1, V2, etc.  The variables in these columns were obtained using Principal Component Analysis (PCA) to transform data about each transaction.  We do not know what the original data features are because that information is confidential.
 
-1. Which features appear to be indicative of credit card fraud?
-2. How are the time and amount features related to predictions of fraud?
+### Creating the Best Machine Learning Model
 
-Due to the size of the file, we are going to use Amazon Web Services SageMaker to run our code.  After preparing our data using pandas and scikit-learn, we will use the AutoGluon library to produce machine learning models and determine which ones work the best for this dataset.  We'll take the top two models and analyze them to determine which model performs the best.  The dataset is highly imbalanced, containing many more legtitimate transactions than fraudulent transactions, so the recommendation from Kaggle is to use Area Under Precision Recall Curve to measure model accuracy.  Once we have our model, we will explore how it could be used to help banks detect credit card fraud with their own data.
+We used Amazon SageMaker Autopilot to select and build the best machine learning (ML) models for the credit card fraud dataset.  Autopilot, as the name suggests, automates the data preprocessing and model selectiong, building, and tuning.  After we created an Amazon S3 bucket for the ZIP file containing the credit card fraud data CSV file, we split the data into training and testing sets and uploaded them to the Amazon S3 bucket.  Then we configured and launched an Autopilot job to process the data, create a valdiation set, determine which ML  models would work best for our dataset, and tune the top models to determine the optimal hyperparameters.  We configured Autopilot to return the top five best-performing ML models. 
+
+After the Autopilot job completed, we used Amazon SageMaker to deploy an inference pipeline to deploy the top candidate model returned by Autopilot.  We then used batch transform to remove noise and other interferance that might affect model performance and generate predictions using the ML model.
+
+Autopilot correctly determined that a binary classification model was needed for our dataset and selected the best ML model based on F1 score: 0.41008999943733215.  THe accurace of the model is 0.9959099888801575 and area under the curve is 0.9928200244903564.
+
+
+### Resources
+Direct Marketing with Amazon SageMaker AutoPilot: https://github.com/aws/amazon-sagemaker-examples/blob/master/autopilot/sagemaker_autopilot_direct_marketing.ipynb
+Training Models to Detect Credit Card Frauds with Amazon SageMaker Autopilot:  https://towardsdatascience.com/training-models-to-detect-credit-card-frauds-with-amazon-sagemaker-autopilot-d49a6b667b2e
+AWS Deploy and Inference Pipeline: https://docs.aws.amazon.com/sagemaker/latest/dg/inference-pipelines.html
+AWS Use Batch Transform: https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform.html
