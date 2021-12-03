@@ -36,7 +36,11 @@ The Data Exploration Notebook gives an overview of the data.  We pulled our data
 
 To see if Autopilot's model really is the best, we built five of our own models:
 
-
+1. Decision Tree
+2. Gradient Boosting
+3. Random Forest
+4. Bagging Classifier
+4. XGBoost
 
 ### Model Evaluation
 
