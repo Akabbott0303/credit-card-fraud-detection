@@ -56,7 +56,7 @@ XGBoost appears to be the current "it" model for classification problems.  This 
 
 ### Model Evaluation
 
-As noted above, the area under the Receiver Operating Characteristic (ROC) curve (AUC) is the best metric to use for imbalanced datasets. The AUC measures the true positive rate versus the false posictive rate.  
+As noted above, the area under the Receiver Operating Characteristic (ROC) curve (AUC) is the best metric to use for imbalanced datasets. The AUC measures the true positive rate versus the false posictive rate.  A higher AUC score indicates that a particular model performs its classification task well.
 
 AWS Autopilot calculated the AUC score as well as the F1 score and accuracy for its model as part of the code we used.
 
@@ -83,10 +83,14 @@ https://machinelearningmastery.com/gentle-introduction-xgboost-applied-machine-l
 
 Brownlee, Jason. *Bagging and Random Forest for Imbalanced Classification*. https://machinelearningmastery.com/bagging-and-random-forest-for-imbalanced-classification/. Retrieved 2 December 2021.
 
+Cortez, Victoria. *Understanding the ROC curve in three visual steps*. https://towardsdatascience.com/understanding-the-roc-curve-in-three-visual-steps-795b1399481c. Retrieved 3 December 2021.
+
 Karpur, Ajay, et al. *Customer Churn Prediction with Amazon SageMaker Autopilot*. https://github.com/aws/amazon-sagemaker-examples/blob/master/autopilot/autopilot_customer_churn.ipynb. Retrieved November 22, 2021.
 
 Samuel, James. *Training Models to Detect Credit Card Frauds with Amazon SageMaker Autopilot*. https://towardsdatascience.com/training-models-to-detect-credit-card-frauds-with-amazon-sagemaker-autopilot-d49a6b667b2e. Retrieved November 21, 2021.
 
 Severtson, Roald Bradley, et al. *Direct Marketing with Amazon SageMaker AutoPilot*. https://github.com/aws/amazon-sagemaker-examples/blob/master/autopilot/sagemaker_autopilot_direct_marketing.ipynb. Retrieved November 21, 2021.
+
+Steen, Doug.  *Understanding the ROC Curve and AUC*. https://towardsdatascience.com/understanding-the-roc-curve-and-auc-dd4f9a192ecb. Retrieved 3 December 2021.
 
 Sun, Luke.  *Credit Card Fraud Detection*. https://towardsdatascience.com/credit-card-fraud-detection-9bc8db79b956. Retrieved 2 December 2021.
