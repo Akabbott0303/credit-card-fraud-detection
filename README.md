@@ -2,11 +2,13 @@
 
 !()
 
-Introduction Goes Here
+Credit card fraud is a modern problem that affects everyone to some degree.  It costs card-issuing banks time, money, and human resources to track and resolve, and it costs consumers time and also money if fraudulent transactions are not caught.  It also shakes our sense of security.  Technology has evolved to create many machine learning models that can be used to detect credit card fraud.  Machine learning models can be built using code and data science libaries, and they can also be built using tools such as Amazon Web Services Autopilot program.  Amazon has a brand new tool called Canvas that makes building machine learning very easy even for non-programmers.
+
+Which approach to building machine learning models to detect credit card fraud is best - a coding or non-coding approach?  Also, which type of model from the myriad choices available works the best?  These are the questions we set out to answer using a done-for-us dataset and several data science tools.
 
 ### The Credit Card Fraud Dataset
 
-The [Credit Card Fraud Detection dataset](https://www.kaggle.com/mlg-ulb/creditcardfraud) from Kaggle contains 284,807 credit card transactions made in September 2013 by credit cardholders.  Of the 284,807 transactions, 492 (0.172%) are fraudulent.  
+For our data, we used the famous [Credit Card Fraud Detection dataset](https://www.kaggle.com/mlg-ulb/creditcardfraud) from Kaggle.  This dataset contains 284,807 credit card transactions made in September 2013 by credit cardholders.  Of the 284,807 transactions, 492 (0.172%) are fraudulent.  
 
 !(/Images/Target_Imbalance.PNG)
 
@@ -34,7 +36,7 @@ The Data Exploration Notebook gives an overview of the data.  We pulled our data
 
 #### Home Grown Models
 
-To see if Autopilot's model really is the best, we built five of our own models:
+To see if Autopilot's model really is the best, we built five of our own models using the Scikit-Learn library:
 
 1. Decision Tree
 2. Gradient Boosting
@@ -42,18 +44,49 @@ To see if Autopilot's model really is the best, we built five of our own models:
 4. Bagging Classifier
 4. XGBoost
 
+The Decision Tree is a supervised learning method.  In classification problems, it predicts target values by using the features of a dataset to make decisions.
+
+The Gradient Boosting Classifier is an additive model that combines other models together to create one model that performs better than its parts.
+
+The Random Forest Classifier is a meta estimator that creates several decision trees from sub-sets of data and averages the results of each to make predictions.
+
+The Bagging Classifier is an ensemble meta estimator.  Like Random Forest, it uses sub-sets of the data.  The predictions from fitting classifiers on the data subsets are aggregated or averaged to generate model predictions.
+
+XGBoost appears to be the current "it" model for classification problems.  This is the model AWS Autopilot selected as the best for the credit card fraud dataset.  XGBoost is "an implementation of gradient boosted decision trees designed for speed and performance" (Brownlee, *XGBoost*).
+
 ### Model Evaluation
+
+As noted above, the area under the Receiver Operating Characteristic (ROC) curve (AUC) is the best metric to use for imbalanced datasets. The AUC measures the true positive rate versus the false posictive rate.  
+
+AWS Autopilot calculated the AUC score as well as the F1 score and accuracy for its model as part of the code we used.
+
+We used Scikit-Learn to return and plot the AUC score for all of our models.  We also printed the F1 score, classification report, and confusion matrix for all models.
 
 For the model selected by Autopilot based on F1 score, the F1 score is 0.6461499929428101, accuracy is 0.9984899759292603, and the AUC is 0.9936299920082092.  For the model selected based on AUC, F1 score is 0.4532400071620941, accuracy is 0.9966800212860107, and the AUC is 0.9926300048828125.
 
+### Conclusions
+
+
+
 ### Resources
+
+Adithyan, Nikihil. *Credit Card Fraud Detection with Machine Learning in Python.* https://medium.com/codex/credit-card-fraud-detection-with-machine-learning-in-python-ac7281991d87. Retrieved 2 December 2021.
 
 Amazon Web Serices. *AWS Deploy and Inference Pipeline*. https://docs.aws.amazon.com/sagemaker/latest/dg/inference-pipelines.html. Retrieved November 21, 2021.
 
 Amazon Web Serices. *AWS Use Batch Transform*. https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform.html. Retrieved November 21, 2021.
+
+Brownlee, Jason. *A Gentle Introduction to the Gradient Boosting Algorithm for Machine Learning.*. https://machinelearningmastery.com/gentle-introduction-gradient-boosting-algorithm-machine-learning/. Retrieved 3 December 2021.
+
+Brownlee, Jason. *A Gentle Introduction to XGBoost for Applied Machine Learning.*. . Retrieved 3 December 2021.
+https://machinelearningmastery.com/gentle-introduction-xgboost-applied-machine-learning/.
+
+Brownlee, Jason. *Bagging and Random Forest for Imbalanced Classification*. https://machinelearningmastery.com/bagging-and-random-forest-for-imbalanced-classification/. Retrieved 2 December 2021.
 
 Karpur, Ajay, et al. *Customer Churn Prediction with Amazon SageMaker Autopilot*. https://github.com/aws/amazon-sagemaker-examples/blob/master/autopilot/autopilot_customer_churn.ipynb. Retrieved November 22, 2021.
 
 Samuel, James. *Training Models to Detect Credit Card Frauds with Amazon SageMaker Autopilot*. https://towardsdatascience.com/training-models-to-detect-credit-card-frauds-with-amazon-sagemaker-autopilot-d49a6b667b2e. Retrieved November 21, 2021.
 
 Severtson, Roald Bradley, et al. *Direct Marketing with Amazon SageMaker AutoPilot*. https://github.com/aws/amazon-sagemaker-examples/blob/master/autopilot/sagemaker_autopilot_direct_marketing.ipynb. Retrieved November 21, 2021.
+
+Sun, Luke.  *Credit Card Fraud Detection*. https://towardsdatascience.com/credit-card-fraud-detection-9bc8db79b956. Retrieved 2 December 2021.
