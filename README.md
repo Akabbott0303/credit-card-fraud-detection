@@ -1,5 +1,7 @@
 # Credit Card Fraud Detection
 
+![Header Picture](/Images/credit-card-1591492_960_720.webp)
+
 Credit card fraud is a modern problem that affects everyone to some degree.  It costs card-issuing banks time, money, and human resources to track and resolve, and it costs consumers time and also money if fraudulent transactions are not caught.  It also shakes our sense of security.  Technology has evolved to create many machine learning models that can be used to detect credit card fraud.  Machine learning models can be built using code and data science libaries, and they can also be built using tools such as Amazon Web Services Autopilot program.  
 
 Which approach to building machine learning models to detect credit card fraud is best - a coding or non-coding approach?  Also, which type of model from the myriad choices available works the best?  These are the questions we set out to answer using a done-for-us dataset and several data science tools.
@@ -12,7 +14,7 @@ For our data, we used the famous [Credit Card Fraud Detection dataset](https://w
 
 The dataset consists of 31 columns of numerical data.  Three of the columns are time (number of seconds between the first transaction in the dataset and the current transaction), amount of transaction, and class (1 = fraudulent; 0 = not fraudulent).  The remaining columns are designated as V1, V2, etc.  The variables in these columns were obtained using Principal Component Analysis (PCA) to transform data about each transaction.  We do not know what the original data features are because that information is confidential but we can see that several of the top 10 most predictive features are correlated with each other.
 
-!(/Images/Correlation_Matrix.PNG)
+![Correlation Matrix](/Images/Correlation_Matrix.PNG)
 
 ### Creating the Best Machine Learning Model
 
