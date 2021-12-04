@@ -1,7 +1,5 @@
 # Credit Card Fraud Detection
 
-!()
-
 Credit card fraud is a modern problem that affects everyone to some degree.  It costs card-issuing banks time, money, and human resources to track and resolve, and it costs consumers time and also money if fraudulent transactions are not caught.  It also shakes our sense of security.  Technology has evolved to create many machine learning models that can be used to detect credit card fraud.  Machine learning models can be built using code and data science libaries, and they can also be built using tools such as Amazon Web Services Autopilot program.  
 
 Which approach to building machine learning models to detect credit card fraud is best - a coding or non-coding approach?  Also, which type of model from the myriad choices available works the best?  These are the questions we set out to answer using a done-for-us dataset and several data science tools.
