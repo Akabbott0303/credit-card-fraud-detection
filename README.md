@@ -63,8 +63,8 @@ We used Scikit-Learn to return and plot the ROC for all of our models.  We also 
 | Decision Tree              | 0.8707      | 0.7574     | 0.9992     |
 | Gardient Boosting          | 0.8081      | 0.6407     | 0.9988     |
 | Random Forest              | 0.9041      | 0.8818     | 0.9996     |
-| Bagging Classifier         | 0.8291      | 1.0000     | 0.9994     |
-| XGBoost                    | 0.9000      | 1.0000     | 0.9996     |
+| Bagging Classifier         | 0.8291      | 0.7822     | 0.9994     |
+| XGBoost                    | 0.9000      | 0.8688     | 0.9996     |
 
 
 ### Conclusions
