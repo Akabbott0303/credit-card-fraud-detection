@@ -59,7 +59,7 @@ We used Scikit-Learn to return and plot the ROC for all of our models.  We also 
 | Model                      | AUC Score   | F1 Score   | Accuracy   |
 | -------------------------- | ----------- | ---------- | ---------- |
 | AWS AUC Optimzed           | 0.9926      | 0.4532     | 0.9967     |
-| AWS F1 Score Optimized     | 0.9936      | 0.6461     | 0.9985     |
+| AWS F1 Score Optimized     | 0.9688      | 0.4108     | 0.9962     |
 | Decision Tree              | 0.8707      | 0.7574     | 0.9992     |
 | Gardient Boosting          | 0.8081      | 0.6407     | 0.9988     |
 | Random Forest              | 0.9041      | 0.8818     | 0.9996     |
@@ -69,7 +69,7 @@ We used Scikit-Learn to return and plot the ROC for all of our models.  We also 
 
 ### Conclusions
 
-The overall top-performing model is the Autopilot-generated XGBoost model optimized for F1 score.  Of the models we built ourselves, the top performer is the Random Forest.  We would have liked to run more metrics for our Autopilot models to compare them more fully to our models, but we found the coding a bit tough to decipher in the time we had for the project.  Amazon has a brand new tool called Canvas that makes building machine learning very easy even for non-programmers, and having worked with Autopilot on the coding end, we can see that there is definitely a need for a tool like this. In addition, Amazon regularly updates Autopilot, adding additional metrics, etc.
+The overall top-performing model is the Autopilot-generated XGBoost model optimized for AUC score.  Of the models we built ourselves, the top performer is the Random Forest.  We would have liked to run more metrics for our Autopilot models to compare them more fully to our models, but we found the coding a bit tough to decipher in the time we had for the project.  Amazon has a brand new tool called Canvas that makes building machine learning very easy even for non-programmers, and having worked with Autopilot on the coding end, we can see that there is definitely a need for a tool like this. In addition, Amazon regularly updates Autopilot, adding additional metrics, etc.
 
 Another avenue we would explore if we had additional time is resampling.  We'd like to test the "home grown" models with data resampled using different techniques to see how model performance might be improved.  Of course if time were no object, we'd also like to test more model types.
 
